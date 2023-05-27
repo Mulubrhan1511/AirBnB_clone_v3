@@ -15,7 +15,7 @@ def get_status():
     return jsonify({"status": "OK"})
 
 
-@app_views.route("/stats", methods=["GET"])
+@app_views.route("/stats", strict_slashes=False)
 def get_stats():
     stats = {}
     for cls in storage.classes:
