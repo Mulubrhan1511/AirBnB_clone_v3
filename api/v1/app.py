@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Fabric script that generates a tgz archive from the contents of the web_static
+folder of the AirBnB Clone repo
+"""
+
 from flask import Flask
 from models import storage
 from api.v1.views import app_views
