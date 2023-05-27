@@ -13,3 +13,10 @@ from flask import jsonify
 @app_views.route('/status', strict_slashes=False)
 def get_status():
     return jsonify({"status": "OK"})
+
+@app_views.route("/stats", methods=["GET"])
+def get_stats():
+    stats = {}
+    for cls in storage.classes:
+        stats[cls] = storage.count(cls)
+    return jsonify(stats)
